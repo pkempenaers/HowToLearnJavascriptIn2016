@@ -2,12 +2,14 @@
 *.iml
 *.iws
 *.eml
+*.log
 out/
 .DS_Store
 .svn
-log/*.log
 tmp/**
 node_modules/
+bower_components/
 .sass-cache
 css/reveal.min.css
+css/custom.min.css
 js/reveal.min.js

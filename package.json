@@ -1,22 +1,16 @@
 {
-  "name": "reveal.js",
-  "version": "3.3.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://lab.hakim.se/reveal-js",
-  "subdomain": "revealjs",
-  "main": "js/reveal.js",
+  "name": "presentation: how to learn javascript in 2016",
+  "version": "1.0",
+  "description": "Presentation 1",
   "scripts": {
     "test": "grunt test",
     "start": "grunt serve"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Pieter Kempenaers"
   },
   "repository": {
-    "type": "git",
-    "url": "git://github.com/hakimel/reveal.js.git"
+    "type": "git"
   },
   "engines": {
     "node": "~4.1.1"

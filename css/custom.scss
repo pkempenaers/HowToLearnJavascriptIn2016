@@ -1,0 +1,80 @@
+.reveal .slides {
+  
+  .title-slide { 
+    h1 {
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: 1.1em;
+      text-transform: lowercase;
+    }
+  }
+
+  h1 {
+    font-size: 1.5em;
+    text-transform: none;
+  }
+
+  li p {
+		margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    margin: 0 1em;
+  }
+
+  .jQueryLogo {
+    background-color: rgba(250, 250, 250, 1);
+    height: 10vh;
+    padding: .2em;
+  }
+
+	.facebookLogo {
+		height: 6vh;
+	}
+
+  .momentJsLogo {
+    height: 15vh;
+  }
+
+  .babelLogo {
+    height: 20vh;
+  }
+
+	.netscapeLogo {
+		height: 8vh;
+	}
+
+	.browserifyLogo {
+		height: 15vh;
+	}
+
+	.npmLogo {
+		height: 8vh;
+	}
+
+	.bowerLogo {
+		height: 20vh;
+	}
+
+	.important {
+		color: red;
+		font-weight: 700;
+	}
+
+	.gruntLogo, .gulpLogo {
+		height: 10vh;
+	}
+
+	.webpackLogo {
+		height: 20vh;
+		background-color: rgba(250, 250, 250, 1);
+	}
+}

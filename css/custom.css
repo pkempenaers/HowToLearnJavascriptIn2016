@@ -1,0 +1,63 @@
+.reveal .slides .title-slide h1 {
+  font-size: 1.5em;
+  text-transform: uppercase; }
+
+.reveal .slides .title-slide h2 {
+  font-size: 1.1em;
+  text-transform: lowercase; }
+
+.reveal .slides h1 {
+  font-size: 1.5em;
+  text-transform: none; }
+
+.reveal .slides li p {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.reveal .slides .logo {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  margin: 0 1em; }
+
+.reveal .slides .jQueryLogo {
+  background-color: #fafafa;
+  height: 10vh;
+  padding: .2em; }
+
+.reveal .slides .facebookLogo {
+  height: 6vh; }
+
+.reveal .slides .momentJsLogo {
+  height: 15vh; }
+
+.reveal .slides .babelLogo {
+  height: 20vh; }
+
+.reveal .slides .netscapeLogo {
+  height: 8vh; }
+
+.reveal .slides .browserifyLogo {
+  height: 15vh; }
+
+.reveal .slides .npmLogo {
+  height: 8vh; }
+
+.reveal .slides .bowerLogo {
+  height: 20vh; }
+
+.reveal .slides .important {
+  color: red;
+  font-weight: 700; }
+
+.reveal .slides .gruntLogo, .reveal .slides .gulpLogo {
+  height: 10vh; }
+
+.reveal .slides .webpackLogo {
+  height: 20vh;
+  background-color: #fafafa; }

@@ -1,50 +1,412 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Learn JavaScript in 2016</title>
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<title>reveal.js</title>
+	<!-- custom styling -->
+	<link rel="stylesheet" href="css/custom.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+<body>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<div class="reveal">
+		<div class="slides">
+			<section class="title-slide">
+				<h1>How it feels to learn JavaScript in 2016</h1>
+			</section>
+			<section>
+				<section>
+					<h1>The goal</h1>
+					<p>
+						Display latest activity from the users
+					</p>
+					<ul>
+						<li>Get data from the REST endpoint</li>
+						<li>Display in a filterable table</li>
+						<li>Update when data changes</li>
+					</ul>
+				</section>
+				<section>
+					<h1>Previously</h1>
+					<p>Use jQuery to fetch and display the data </p>
+					<img class="logo jQueryLogo" src="images/jQueryLogo.png" />
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>But</h1>
+					<p>
+						OMG no one uses jQuery anymore.
+					</p>
+					<img class="logo reactLogo" src="images/reactLogo.png" />
+					<aside class="notes">
+						<p>
+							You should try using React.
+						</p>
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>
+						So what is React?
+					</h1>
+					<p>
+						Super cool library build by <img class="logo facebookLogo" src="images/facebookLogo.png" />
+					</p>
+					<aside class="notes">
+						<p>
+							That really brings control and performance to your application
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>
+						So we just use React to display the data?
+					</h1>
+					<p>
+						Of course not:
+						<ul>
+							<li>
+								ReactDOM
+							</li>
+							<li>
+								momentJs
+							</li>
+						</ul>
+					</p>
+					<img class="logo momentJsLogo" src="images/momentJsLogo.png" />
+					<aside class="notes">
+						<p>
+							Of course not you need ReactDOM to manipulate the DOM
+						</p>
+						<p>
+							And since you'll be working with timed data you need atleast momentJs
+						</p>
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>
+						So we add those two and then we're good to go?
+					</h1>
+					<p>
+						Well not quite you need to add Babel
+					</p>
+					<img class="logo babelLogo" src="images/babelLogo.png" />
+				</section>
+				<section>
+					<h1>
+						What another library? But why?
+					</h1>
+					<p>
+						It's not 2015 anymore, is it?
+					</p>
+					<aside class="notes">
+						<p>
+							Well you don't really need Babel to use React but without it you're stuck with ES5 and you want to use ES6 or ES2016 and up don't you?
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>
+						ES5 and ES6?
+					</h1>
+					<ul>
+						<li>
+							ECMAScript
+						</li>
+						<li>
+							JavaScript
+						</li>
+						<li>
+							<p>LiveScript <img class="logo netscapeLogo" src="images/netscapeLogo.png" /></p>
+						</li>
+					</ul>
+					<aside class="notes">
+						<p>
+							2 versions of ECMAScript, the standard where JavaScript was based on in 1999 after it was released in 1995 but then it still was LiveScript and only used in NetScape Navigator
+							<br />
+							back then it was a real mess
+							<br />
+							but now we have 7 versions of it and it's much better
+						</p>
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>No jQuery but 3 libraries?</h1>
+					<ul>
+						<li>Include</li>
+						<li>Bundle</li>
+						<li>Module manager</li>
+					</ul>
+					<aside class="notes">
+						<p>
+							So you used to be able to use jQuuery but that becomes spaghetti code so now i need 3 libraries to fetch data and display it in a table?
+						</p>
+						<p>
+							Well you include those 3 libraries but bundle them up with a module manager so you only have to load 1 file
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>Sigh, so what is a module manager?</h1>
+					<p>
+						<ul>
+							<li>Definition</li>
+							<li>AMD and CommonJS</li>
+						</ul>
+					</p>
+					<img class="logo commonjsLogo" src="images/commonjsLogo.png" />
+					<aside class="notes">
+						<p>
+							Definition depends on the environment
+						</p>
+						<p>
+							But in web we mean anythin that supports AMD or CommonJs
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>So ...</h1>
+					<p>
+						AMD and CommonJS?
+					</p>
+					<p>
+						<ul>
+							<li>API's</li>
+							<li>Browserify to bundle</li>
+						</ul>
+					</p>
+					<img class="logo browserifyLogo" src="images/browserifyLogo.png" />
+					<aside class="notes">
+						<p>
+							Both are apis that define how multiple javascript libraries and classes should interact
+						</p>
+						<p>
+							Think about export, import, require, ...
+						</p>
+						<p>
+							So you define the structure with AMD or CommonJS and then you use browserify to bundle them up
+						</p>
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Makes sense? So Browserify?</h1>
+					<p>
+						<ul>
+							<li>Bundle dependencies</li>
+							<li>Created because of npm</li>
+						</ul>
+					</p>
+					<img class="logo npmLogo" src="images/npmLogo.png" />
+					<aside class="notes">
+						<p>
+							Tool that allows to budnle CommonJs described depencies to files that can run in the browser
+						</p>
+						<p>
+							It was created because most people publish these depencies to the npm registry
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>
+						???
+					</h1>
+					<p>
+						Very big public repository
+					</p>
+					<aside class="notes">
+						<p>
+							It's a .. repository were other people put their code
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>
+						So a CDN?
+					</h1>
+					<p>
+						No
+					</p>
+					<aside class="notes">
+						<p>
+							Not really. It’s more like a centralised database where anyone can publish and download libraries, so you can use them locally for development and then upload them to a CDN if you want to.
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>
+						So like Bower?
+					</h1>
+					<p>
+						2015 called
+					</p>
+					<img class="logo bowerLogo" src="images/bowerLogo.png" />
+				</section>
+			</section>
+			<section>
+				<h1>So lets recap</h1>
+				<ul>
+					<li>Angular</li>
+					<li>From npm</li>
+					<li>Browserify</li>
+				</ul>
+				<p>Seems overly complicated</p>
+			</section>
+			<section>
+				<section>
+					<p class="important">It is</p>
+				</section>
+				<section>
+					<p>
+						<ul>
+							<li>Grunt</li>
+							<li>Gulp</li>
+							<li>Broccoli</li>
+							<li>Mimosa</li>
+						</ul>
+					</p>
+					<img class="logo gulpLogo" src="images/gulpLogo.png" />
+					<img class="logo gruntLogo" src="images/gruntLogo.png" />
+					<aside class="notes">
+						<p>That's why you use a task manager like grunt, gulp or broccoli. You could even use Mimosa</p>
+					</aside>
+				</section>
+				<section>
+					<p>Actually, we don't do that anymore</p>
+					<p>
+						<ul>
+							<li>Makefiles</li>
+							<li>Webpack</li>
+						</ul>
+					</p>
+					<img class="logo webpackLogo" src="images/webpackLogo.png" />
+					<aside class="notes">
+						<p>Actually we used taks runners in 2015</p>
+						<p>Then we used makefiles for everything because we like to make things complicated and then go back to the basics. Wait till you hear that we are going to do assembly in the web in a year or 2</p>
+						<p>But now we wrap everything with webpack</p>
+					</aside>
+				</section>
+				<section>
+					<h1>So webpack?</h1>
+					<p>Better version of Browserify</p>
+				</section>
+				<section>
+					<h1>Better how</h1>
+					<p>
+						Actually...
+					</p>
+					<aside class="notes">
+						<p>
+							It's not really better, it's just more opinionated on how your dependencies should be tied. So it can support more module managers, and not only CommonJS but also native ES6 modules
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>Confused?</h1>
+					<p>
+						Everyone is that's why we have SystemJS
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>Yet another "noun"js? So what is this SystemJS</h1>
+					<p>
+						<ul>
+							<li>
+								Dynamic module loader
+							</li>
+							<li>
+								Multiple files
+							</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h1>But I thought that you wanted one big file?</h1>
+					<p>HTTP/2</p>
+				</section>
+				<section>
+					<h1>So why do you not simply link to the orignal CDN?</h1>
+					<ul>
+						<li>Still need Babel</li>
+						<li>Production pre-tasks</li>
+					</ul>
+					<aside class="notes">
+						<p>
+							Well in theory that could work but you still need babel and you would be including the whole babel-core
+						</p>
+						<p>
+							And that wouldn't be efficient for production
+						</p>
+						<p>
+							To be efficient you need to minify assets, uglify them, inline css above the fold, defer scripts, and so on
+						</p>
+					</aside>
+				</section>
+				<section>
+					<h1>So how would you do it?</h1>
+					<p>
+						I would:
+						<ul>
+							<li>Transpile from Typescript</li>
+							<li>Webpack + SystemJS + Babel</li>
+						</ul>
+					</p>
+				</section>
+			</section>
+			<section>
+				<h1>Typescript? I thought we were coding in JavaScript.</h1>
+				<p>But it is, it's just nicer because you make JavaScript a typed language</p>
+			</section>
+			<section>
+				<section>
+					<h1>But I just want to display data from the server.</h1>
+				</section>
+				<section>
+					<h1>Let's get back to React. How can I display data from the server using React?</h1>
+				</section>
+			</section>
+			<section>
+				<p class="important">You don't</p>
+			</section>
 		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
-		<script>
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				history: true,
-
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
 </html>
