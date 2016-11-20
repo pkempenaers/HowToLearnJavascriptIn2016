@@ -1,0 +1,337 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Presenting the MyForce frontend stack</title>
+	<link rel="stylesheet" href="../../css/reveal.css">
+	<link rel="stylesheet" href="../../css/theme/black.css">
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+	<!-- custom styling -->
+	<link rel="stylesheet" href="../../css/custom.css">
+	<!-- presentation specific styling -->
+	<link rel="stylesheet" href="styling.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+			<section class="title-slide">
+				<h1>The MyForce frontend stack</h1>
+			</section>
+			<section>
+				<section>
+					<p>
+						We use the same / similar stack for several projects:
+					</p>
+					<ul>
+						<li>
+							RecordingManagementTool
+						</li>
+						<li>
+							KuFe
+						</li>
+						<li>
+							Project Orbit
+						</li>
+						<li>
+							...
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p>2 stacks need to be explained:
+					</p>
+					<ul>
+						<li>
+							Dev stack
+						</li>
+						<li>
+							Application stack
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p>Dev stack:</p>
+					<ul>
+						<li>
+							Transpiler?
+						</li>
+						<li>
+							Package manager?
+						</li>
+						<li>
+							Task runner?
+						</li>
+						<li>
+							...
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p>Application stack:</p>
+					<ul>
+						<li>
+							MV* framework?
+						</li>
+						<li>
+							Layout framework?
+						</li>
+						<li>
+							ES*?
+						</li>
+						<li>
+							...
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>Dev stack: yeoman</p>
+					<img class="logo yeomanLogo" src="images/yeomanLogo.png" />
+				</section>
+				<section>
+					<p>Yeoman:</p>
+					<p>
+						<span class="strong">Generators</span>
+						that 
+						<span class="strong">scaffold</span>
+						complete 
+						<span class="strong">oppinionated</span>
+						projects, helping developers in starting projects
+						quickly without the 
+						<span class="strong">headaches</span>
+						that come with doing everything manaully.
+					</p>
+				</section>
+				<section>
+					<p>Choose generator depending on Applicatoin stack</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>Application priorities:</p>
+					<ul>
+						<li>UX</li>
+						<li>Maintainable by multiple developers</li>
+						<li>Extendable</li>
+					</ul>
+				</section>
+				<section>
+					<ul>
+						<li>VanillaJS</li>
+						<li>jQuery</li>
+					</ul>
+					<p>are no options</p>
+				</section>
+				<section>
+					<p>
+						The obvious trend is to have
+						<span class="strong">SPA</span>'s
+						as these can give the most
+						<span class="strong">native</span>
+						feeling experience.
+					</p>
+				</section>
+				<section>
+					<p>
+						Another trend is to have an MVC framework
+						as this allows us to consume REST api's.
+					</p>
+				</section>
+				<section>
+					<p>Only 2.5 real options:</p>
+					<ul>
+						<li>React</li>
+						<li>Angular 1.x</li>
+						<li>Angular 2</li>
+					</ul>
+					<aside class="notes">
+						<p>
+							Angular 2 is considered a new framework. 
+							They've learned a lot from React and syntax needed to change
+						</p>
+						<p>
+							We ignore Angular2 as at the moment this is only a .5 option
+						</p>
+						<p>
+							pro angular:
+						</p>
+						<ul>
+							<li>easier to find developers</li>
+							<li>better out of the box experience</li>
+						</ul>
+						<p>
+							pro react:
+						</p>
+						<ul>
+							<li>Better performance</li>
+							<li>More configurable</li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>Layout frameworks:</p>
+					<ul>
+						<li>Bootstrap</li>
+						<li>Material</li>
+						<li>Foundation</li>
+					</ul>
+				</section>
+				<section>
+					<p>We use bootstrap but try to lose the bootstrap feel</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>ES version:</p>
+					<ul>
+						<li>Browser support?</li>
+						<li>Transpiling to previous version?</li>
+						<li>PolyFilling support for next version</li>
+					</ul>
+				</section>
+				<section>
+					<p>We used supported version by browser (ES5)</p>
+					<p>Now we use ES6 transpiled by Babel to ES5 polyfilled for IE9/10</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p>
+						We need a generator that offers:
+					</p>
+					<ul>
+						<li>Angular 1</li>
+						<li>ES6 or later with transpiling</li>
+						<li>Bootstrap</li>
+					</ul>
+				</section>
+				<section>
+					<p>Some other things we want:</p>
+					<ul>
+						<li>Bower support</li>
+						<li>Gulp support</li>
+						<li>Sass support</li>
+						<li>Linting support</li>
+					</ul>
+				</section>
+				<section>
+					<p>generator-gulp-angular</p>
+				</section>
+			</section>
+			<section>
+				<h1>Preparing our dev environment</h1>
+			</section>
+			<section>
+				<section>
+					<p>Install node</p>
+					<a href="https://nodejs.org/en/">link</a>
+				</section>
+				<section>
+					<p>Install globally:</p>
+					<ul>
+						<li>Gulp</li>
+						<li>Bower</li>
+						<li>Yeoman</li>
+					</ul>
+					<pre><code data-trim>
+						npm install -g Gulp Bower yo
+					</code></pre>
+				</section>
+				<section>
+					<p>Install generator</p>
+					<pre><code data-trim>
+						npm install -g generator-gulp-angular
+					</code></pre>
+				</section>
+				<section>
+					<p>Scaffolding from an empty directory (best named after your project)</p>
+					<pre><code data-trim>
+						yo gulp-angular
+					</code></pre>
+				</section>
+				<section>
+					<img src="images/screenshot1.png" />
+					<p>We choose 1.5 as this is the upgrade path to 2</p>
+				</section>
+				<section>
+					<img src="images/screenshot2.png" />
+					<p>These can be removed or added later on</p>
+				</section>
+				<section>
+					<img src="images/screenshot3.png" />
+					<p>We actually don't need jQuery</p>
+				</section>
+				<section>
+					<img src="images/screenshot4.png" />
+					<p>Why depend on another library when we can do it ourselfs?</p>
+				</section>
+				<section>
+					<img src="images/screenshot5.png" />
+					<p>We use UI-router because in 1.x this was the "best" one.</p>
+				</section>
+				<section>
+					<img src="images/screenshot6.png" />
+					<p>As decided before we use bootstrap</p>
+				</section>
+				<section>
+					<img src="images/screenshot7.png" />
+				</section>
+				<section>
+					<img src="images/screenshot8.png" />
+					<p>C?</p>
+				</section>
+				<section>
+					<img src="images/screenshot9.png" />
+					<p>If we wanted to we could use Babel and still only let it accept ES5 code</p>
+				</section>
+				<section>
+					<img src="images/screenshot10.png" />
+					<p>Not everything needs to be different</p>
+				</section>
+				<section>
+					<img src="images/screenshot11.png" />
+					<p>All done</p>
+				</section>
+				<section>
+					<img src="images/screenshot12.png" />
+					<p>Guess what the next presentation will be about.</p>
+				</section>
+			</section>
+			<section>
+				<p>Lets take a quick look at the result</p>
+			</section>
+		</div>
+	</div>
+	<script src="../../lib/js/head.min.js"></script>
+	<script src="../../js/reveal.js"></script>
+	<script>
+		// More info https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			history: true,
+
+			// More info https://github.com/hakimel/reveal.js#dependencies
+			dependencies: [
+				{ src: '../../plugin/markdown/marked.js' },
+				{ src: '../../plugin/markdown/markdown.js' },
+				{ src: '../../plugin/notes/notes.js', async: true },
+				{ src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+			]
+		});
+	</script>
+</body>
+</html>
