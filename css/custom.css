@@ -6,15 +6,8 @@
   font-size: 1.1em;
   text-transform: lowercase; }
 
-.reveal .slides h1 {
-  font-size: 1.5em;
-  text-transform: none; }
-
-.reveal .slides li p {
-  margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+.reveal .slides .logo {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  margin: 0 1em; }

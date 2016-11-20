@@ -12,14 +12,10 @@
     }
   }
 
-  h1 {
-    font-size: 1.5em;
-    text-transform: none;
-  }
-
-  li p {
-		margin: 0;
-    display: flex;
-    align-items: center;
+  .logo {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    margin: 0 1em;
   }
 }
