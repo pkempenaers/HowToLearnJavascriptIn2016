@@ -48,6 +48,17 @@ module.exports = function(grunt) {
 						ext: '.css'
 					}
 				]
+			},
+			specific: {
+				files: [
+					{
+						expand: true,
+						cwd: 'presentations',
+						src: ['**/*.scss'],
+						dest: 'presentations',
+						ext: '.css'
+					}
+				]
 			}
 		},
 
@@ -124,11 +135,15 @@ module.exports = function(grunt) {
 				tasks: 'css-themes'
 			},
 			css: {
-				files: [ 'css/reveal.scss', 'css/custom.scss' ],
+				files: [ 'css/reveal.scss', 'css/custom.scss'],
 				tasks: 'css-core'
 			},
+			specific_css : {
+				files: ['presentations/**/*.scss'],
+				tasks: 'css-specific'
+			},
 			html: {
-				files: [ '*.html']
+				files: [ '*.html', '**/*.html']
 			},
 			markdown: {
 				files: [ '*.md' ]
@@ -159,6 +174,9 @@ module.exports = function(grunt) {
 
 	// Theme CSS
 	grunt.registerTask( 'css-themes', [ 'sass:themes' ] );
+
+	// Specific CSS
+	grunt.registerTask( 'css-specific', [ 'sass:specific'] );
 
 	// Core framework CSS
 	grunt.registerTask( 'css-core', [ 'sass:core', 'autoprefixer', 'cssmin' ] );

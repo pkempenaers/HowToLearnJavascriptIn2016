@@ -13,3 +13,5 @@ bower_components/
 css/reveal.min.css
 css/custom.min.css
 js/reveal.min.js
+*.css
+**/*.css

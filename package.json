@@ -1,6 +1,6 @@
 {
-  "name": "presentation: how to learn javascript in 2016",
-  "version": "1.0",
+  "name": "presentations",
+  "version": "1.0.0",
   "description": "Presentation 1",
   "scripts": {
     "test": "grunt test",
