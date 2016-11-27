@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -31,8 +31,143 @@
 				<h2>A closer look to automation</h2>
 			</section>
 			<section>
-				<img class="logo gulpLogo" src="images/gulpLogo.png" />
-				<p>The streaming build system</p>
+				<section>
+					<img class="logo gulpLogo" src="images/gulpLogo.png" />
+					<p>The streaming build system</p>
+				</section>
+				<section>
+					<ul>
+						<li>"Successor" of Grunt</li>
+						<li>Faster</li>
+						<li>Easier to set up</li>
+						<li>Streams instead of temp files</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h1>A simple example</h1>
+				</section>
+				<section>
+					<p>Installing gulp globaly</p>
+					<pre><code data-trim>
+npm install gulp -g
+					</code></pre>
+				</section>
+				<section>
+					<p>Starting a project</p>
+					<pre><code data-trim>
+npm init
+					</code></pre>
+					<p>Will add package.json</p>	
+				</section>
+				<section>
+					<p>Using gulp in your project</p>
+					<pre><code data-trim>
+npm install gulp --save-dev
+					</code></pre>
+					<ul>
+						<li>Adds gulp as devDepency in package.json</li>
+						<li>Adds gulp in node_modules folder</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Creating the first task</h2>
+					<p>In gulpfile.js</p>
+					<ol>
+						<li>Include gulp</li>
+						<li>Define task</li>
+						<li>Implement task</li>
+					</ol>
+				</section>
+				<section>
+					<p>Include gulp with require</p>
+					<pre><code data-trim>
+var gulp = require('gulp');
+					</code></pre>
+					<p>Define task</p>
+					<pre><code data-trim>
+gulp.task('task-name', function() {
+	// task implementation
+});
+					</code></pre>
+				</section>
+				<section>
+					<p>Hello world</p>
+					<pre><code data-trim>
+var gulp = require('gulp');
+
+gulp.task('hello', function() {
+	console.log('Hello world');
+});
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Usual style of a gulp task</h2>
+					<ol>
+						<li>Get source files with gulp.src</li>
+						<li>Send files through a gulp plugin</li>
+						<li>Output file in destination folder</li>
+					</ol>
+					<pre><code data-trim>
+gulp.task('task-name', function () {
+	return gulp.src('source-files')
+		.pipe(aGulpPlugin())
+		.pipe(gulp.dest('destination'))
+});
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<h2>RecordingManagementTool</h2>
+				<ol>
+					<li>Split gulpfile.js</li>
+					<li>conf.js</li>
+					<li>build.js</li>
+					<li>inject.js</li>
+					<li>scripts.js</li>
+					<li>styles.js</li>
+					<li>server.js</li>
+					<li>unit-tests.js</li>
+					<li>watch.js</li>
+				</ol>
+			</section>
+			<section>
+				<section>
+					<h1>Jenkins</h1>
+					<ul>
+						<li>Karma reporter</li>
+						<li>Version stamping</li>
+						<li>Eslint</li>
+					</ul>
+				</section>
+				<section>
+					<pre><code data-trim>
+cd .\BisonRecordingsManagement\BisonRecordingsManagement\
+$ProductName = "RecordingManagementTool"
+$gitdescribe = $(git describe --always --long --match "$ProductName-*")
+$commitdatetime = [DateTime]::Parse($(git log --pretty=format:"%ad" -n 1 --date=iso HEAD))
+$gitdescribe += '-' + $commitdatetime.ToString('yyMMdd-HHmm')
+$gitdescribe = $gitdescribe -Replace '(^[^-]*-[0-9\.]*-[0-9]*)-[^-]*-(.*)$', '$1-$2'
+if (Test-Path .\checkstyle-result.xml) {Remove-Item .\checkstyle-result.xml}
+if (Test-Path .\test-results.xml) {Remove-Item .\test-results.xml}
+npm update
+bower update
+$currentPath = (Get-Item -Path ".\" -Verbose).FullName
+$content = eslint -c .\gulp\.eslintrc -f checkstyle .\src\app
+$encoding = New-Object System.Text.UTF8Encoding
+[System.IO.File]::WriteAllText($currentPath + "\checkstyle.xml", $content, $encoding)
+gulp --build=$gitdescribe
+gulp test
+					</code></pre>
+				</section>
+			</section>
+			<section>
+				<p>Next time:</p>
+				<h1>AngularJS introduction</h1>
+			</section>
 		</div>
 	</div>
 	<script src="../../lib/js/head.min.js"></script>
@@ -47,7 +182,12 @@
 				{ src: '../../plugin/markdown/marked.js' },
 				{ src: '../../plugin/markdown/markdown.js' },
 				{ src: '../../plugin/notes/notes.js', async: true },
-				{ src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				{
+					src: '../../plugin/highlight/highlight.js', async: true, callback: function() {
+						hljs.initHighlightingOnLoad();
+						hljs.configure({ tabReplace: '  ' })
+					}
+				}
 			]
 		});
 	</script>

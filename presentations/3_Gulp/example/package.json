@@ -1,0 +1,14 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "gulp example",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp hello"
+  },
+  "author": "pkempenaers",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

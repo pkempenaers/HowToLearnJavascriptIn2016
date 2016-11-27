@@ -1,3 +1,7 @@
 .reveal .slides {
-	
+	pre code {
+		max-height: none;
+		white-space: pre-line;
+		overflow-x: hidden;
+	}
 }
