@@ -1,0 +1,34 @@
+{
+  "name": "exampleApp",
+  "version": "1.0.0",
+  "authors": [
+    "Pieter Kempenaers <pkempenaers@myforce.be>"
+  ],
+  "description": "AngularJS bare minimum example app",
+  "keywords": [
+    "angular",
+    "angularjs",
+    "directive",
+    "dropdown",
+    "multiselect",
+    "checklist",
+    "list",
+    "bootstrap",
+    "checkbox"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1"
+  },
+  "devDependencies": {
+    "angular": "~1",
+  }
+}
