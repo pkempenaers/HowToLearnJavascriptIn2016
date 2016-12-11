@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>Base title</title>
+	<title>Introduction Angular</title>
 	<link rel="stylesheet" href="../../css/reveal.css">
 	<link rel="stylesheet" href="../../css/theme/black.css">
 	<!-- Theme used for syntax highlighting of code -->
@@ -42,6 +42,83 @@
 	document.querySelector('#value').innerText = "2";
 })();
 					</code></pre>
+				</section>
+				<section>
+					<a href="./exampleOld/index.html"><h2>Example app</h2></a>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>The Angular way</h2>
+				</section>
+				<section>
+					<p>Angular lets us bind javascript values to html</p>
+					<p>To bind a value we use the double moustache notation</p>
+					<pre><code data-trim>
+{{value}}
+					</code></pre>
+				</section>
+				<section>
+					<p>The javascript values are inside a controller</p>
+					<p>
+						We need to tell Angular which controller we want to use for a
+						certain html part
+					</p>
+					<p>Previously:</p>
+					<pre><code data-trim>
+<div ng-controller="ExampleController">{{value}}</div>
+					</code></pre>
+				</section>
+				<section>
+					<p>Now we use directives:</p>
+					<p>Directives are javascript objects that express the combination</p>
+					<pre><code data-trim>
+{
+	template: '<p>{{value}}</p>',
+	controller: function() {
+		this.value = 'value';
+	},
+}
+					</code></pre>
+				</section>
+				<section>
+					<p>By registering the directive</p>
+					<pre><code data-trim>
+angular.module('exampleApp', [])
+.directive('exampleDirective', function() {
+	return {
+		template: '<p>{{value}}</p>',
+		controller: ['$scope', function($scope) {
+			$scope.value = 'value';
+		}],
+	};
+});
+					</code></pre>
+					<p>we can now use it in html (once we make cleaar which module angular needs to load)</p>
+					<pre><code data-trim>
+&lt;html ng-app="exampleApp"&gt;
+	&lt;head&gt;
+		<!--
+			load angular, load own script
+		-->
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;example-directive&gt;&lt;/example-directive&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+					</code></pre>
+				</section>
+				<section>
+					<p>At the moment we use components, components are directives with some default settings and removed properties:</p>
+					<ul>
+						<li>controllerAs: '$ctrl'</li>
+						<li>Always bind to controller</li>
+						<li>No compile, nor link function</li>
+					</ul>
+					<p>They are the prefered way to work since Angular 1.5</p>
+				</section>
+				<section>
+					<p>Lets take a look at the rewritten example</p>
 				</section>
 			</section>
 		</div>
